@@ -14,14 +14,17 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while(format[i])
+	while (format[i])
 	{
 		while (format[i] == '%')
 		{
 			switch (format[i + 1])
 			{
 				case 'c':
-				default :
+					printed += _print_char(args);
+					i += 2;
+					break;
+				default:
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
 					i += 2;
