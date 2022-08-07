@@ -29,10 +29,13 @@ int _printf(const char *format, ...)
 					i += 2;
 					break;
 				case '%':
+				{
 					_putchar('%');
 					printed++;
 					i += 2;
-				default:
+					break;
+				}
+				default :
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
 					i += 2;
