@@ -24,6 +24,10 @@ int _printf(const char *format, ...)
 					printed += _print_char(args);
 					i += 2;
 					break;
+				case '%':
+					_putchar('%');
+					i += 2;
+					break;
 				default:
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
