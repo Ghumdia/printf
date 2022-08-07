@@ -11,16 +11,30 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int printed = 0;
+	va_list args;
 
+	va_start(args, format);
 	while(format[i])
 	{
-		_putchar(format[i]);
-		printed++;
+		while (format[i] == '%')
+		{
+			switch (format[i + 1])
+			{
+				case 'c':
+				default :
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					i += 2;
+			}
+
+		}
+		if (format[i])
+		{
+			_putchar(format[i]);
+			printed++;
+		}
 		i++;
 	}
-}
-
-int main(void)
-{
-	_printf("hello world");
+	va_end(args);
+	return (printed);
 }
