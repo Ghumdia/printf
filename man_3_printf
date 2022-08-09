@@ -144,6 +144,7 @@ The \fIunsigned int\fR argument is converted to binary.
 .B o, u, x, X
 .in +2n
 The \fIunsigned int\fR argument is converted to unsigned octal (\fBo\fR),
+.decimal
 unsigned decimal (\fBu\fR), or unsigned hexadecimal (\fBx\fR and \fBX\fR)
 notation. The letters \fBabcdef\fR are used for \fBx\fR conversions; the
 letters \fBABCDEF\fR are used for \fBX\fR conversions.
